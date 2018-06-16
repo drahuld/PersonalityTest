@@ -1,0 +1,19 @@
+{
+  "name": "personalitytest",
+  "version": "1.0.0",
+  "description": "Personality Test Web Application developed for Spark Networks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drahuld/PersonalityTest.git"
+  },
+  "author": "Rahul Deshmukh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drahuld/PersonalityTest/issues"
+  },
+  "homepage": "https://github.com/drahuld/PersonalityTest#readme"
+}
