@@ -29,10 +29,10 @@ const CategoryQuestions = (props) => {
      *
      * @param categoryName
      */
-    const onClickOfGroupDetails = (categoryName) => {
-        if (categoryName !== null && categoryName !== '' && categoryName !== null) {
-            console.log("Inside If condition ");
-
+    const onClickOfGroupDetails = (event, categoryId) => {
+        event.preventDefault();
+        if (categoryId !== null && categoryId !== '' && categoryId !== null) {
+            props.onClickOfCategoryTypeCallBack(event, categoryId);
         }
     };
 
@@ -50,7 +50,7 @@ const CategoryQuestions = (props) => {
                         <div key={key} className="questionOuterDivCss">
                             <details open={value.isQuestionPanelExpanded}>
                                 <summary
-                                    onClick={() => onClickOfGroupDetails(value.categoryName)}>{APPLICATION_CONSTANTS.QUESTION_TYPE_STR} :
+                                    onClick={(event) => onClickOfGroupDetails(event, value.id)}>{APPLICATION_CONSTANTS.QUESTION_TYPE_STR} :
                                     ({value.categoryName})
                                 </summary>
                                 <div className="questionDetailsDivCss">

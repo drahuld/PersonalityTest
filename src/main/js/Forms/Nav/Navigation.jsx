@@ -15,8 +15,8 @@ const Navigation = () => {
     return (
         <div className="navMainDiv">
             <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/home/personalityTest">Personality Test</Link></li>
+                <li><Link to="/home"><span className="labelName">Home</span></Link></li>
+                <li><Link to="/home/personalityTest"><span className="labelName">Personality Test</span></Link></li>
             </ul>
         </div>
     );

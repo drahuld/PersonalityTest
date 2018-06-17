@@ -1,14 +1,202 @@
 .navMainDiv {
   flex: 1;
   font-size: 1.1em;
+  padding: 0;
 }
 
-ul, li {
-  margin: 0;
-  padding: 5px 0 15px 0;
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  -moz-box-shadow: 0 0 5px #111;
+  -webkit-box-shadow: 0 0 5px #111;
+  box-shadow: 0 0 5px #111;
+  /* border: 1px solid red;*/
+  align-items: flex-start;
+  height: 100%;
+
+  li {
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 100%;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      cursor: pointer;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      background: #575e63; /* fallback colour */
+      border-top: 1px solid #878e98;
+      border-bottom: 1px solid #33373d;
+      color: #fff;
+      text-align: left;
+      text-shadow: 0 1px 1px #000;
+      //letter-spacing: 0.09em;
+      margin: 0 auto;
+      padding: 6px;
+      /*        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#575e63), to(#3f4347));
+              background: -webkit-linear-gradient(top, #575e63, #3f4347);
+              background: -moz-linear-gradient(top, #575e63, #3f4347);
+              background: -ms-linear-gradient(top, #575e63, #3f4347);
+              background: -o-linear-gradient(top, #575e63, #3f4347);*/
+      height: 25px;
+      .labelName {
+        width: 70%;
+        align-self: center;
+        justify-self: center;
+        color: white;
+        font-family: Verdana, Helvetica, Arial, sans-serif !important;
+        font-size: 13px;
+        /*border: 1px solid red;*/
+        margin: 0 auto;
+      }
+    }
+
+    a:link {
+      background: linear-gradient(120deg, rgba(36, 138, 82, 1), rgba(37, 114, 135, 1));
+      //248a52
+      //257287
+      //background: -webkit-gradient(linear, 100% 25%, 100% 100%, from(#248A52), to(#257287), color-stop(0,#248A52))
+    }
+
+    a:visited {
+      background: #566f82; /* fallback colour */
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+      background: -webkit-linear-gradient(top, #566f82, #3e505e);
+      background: -moz-linear-gradient(top, #566f82, #3e505e);
+      background: -ms-linear-gradient(top, #566f82, #3e505e);
+      background: -o-linear-gradient(top, #566f82, #3e505e);
+    }
+
+    a:hover {
+      background: #566f82; /* fallback colour */
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+      background: -webkit-linear-gradient(top, #566f82, #3e505e);
+      background: -moz-linear-gradient(top, #566f82, #3e505e);
+      background: -ms-linear-gradient(top, #566f82, #3e505e);
+      background: -o-linear-gradient(top, #566f82, #3e505e);
+    }
+
+    a.active {
+      background: #545f60; //#575e63;
+      color: #6edeef;
+      animation-name: none;
+      //Firefox 1+
+      -webkit-animation-name: none;
+      //Safari 3-4
+      -moz-animation-name: none;
+    }
+
+  }
+}
+
+@media (min-width: 750px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    -moz-box-shadow: 0 0 5px #111;
+    -webkit-box-shadow: 0 0 5px #111;
+    box-shadow: 0 0 5px #111;
+    /* border: 1px solid red;*/
+    align-items: flex-start;
+    height: 100%;
+
+    li {
+      margin: 0;
+      padding: 0;
+      /*border: 1px solid red;*/
+      width: 100%;
+      height: 100%;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        cursor: pointer;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #575e63; /* fallback colour */
+        border-top: 1px solid #878e98;
+        border-bottom: 1px solid #33373d;
+        color: #fff;
+        text-align: left;
+        text-shadow: 0 1px 1px #000;
+        //letter-spacing: 0.09em;
+        margin: 0 auto;
+        padding: 6px;
+/*        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#575e63), to(#3f4347));
+        background: -webkit-linear-gradient(top, #575e63, #3f4347);
+        background: -moz-linear-gradient(top, #575e63, #3f4347);
+        background: -ms-linear-gradient(top, #575e63, #3f4347);
+        background: -o-linear-gradient(top, #575e63, #3f4347);*/
+        height: 25px;
+        .labelName {
+          width: 70%;
+          align-self: center;
+          justify-self: center;
+          color: white;
+          font-family: Verdana, Helvetica, Arial, sans-serif !important;
+          font-size: 13px;
+          /*border: 1px solid red;*/
+          margin: 0 auto;
+        }
+      }
+
+      a:link {
+        background: linear-gradient(120deg, rgba(36, 138, 82, 1), rgba(37, 114, 135, 1));
+        //248a52
+        //257287
+        //background: -webkit-gradient(linear, 100% 25%, 100% 100%, from(#248A52), to(#257287), color-stop(0,#248A52))
+      }
+
+      a:visited {
+        background: #566f82; /* fallback colour */
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+        background: -webkit-linear-gradient(top, #566f82, #3e505e);
+        background: -moz-linear-gradient(top, #566f82, #3e505e);
+        background: -ms-linear-gradient(top, #566f82, #3e505e);
+        background: -o-linear-gradient(top, #566f82, #3e505e);
+      }
+
+      a:hover {
+        background: #566f82; /* fallback colour */
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#566f82), to(#3e505e));
+        background: -webkit-linear-gradient(top, #566f82, #3e505e);
+        background: -moz-linear-gradient(top, #566f82, #3e505e);
+        background: -ms-linear-gradient(top, #566f82, #3e505e);
+        background: -o-linear-gradient(top, #566f82, #3e505e);
+      }
+
+      a.active {
+        background: #545f60; //#575e63;
+        color: #6edeef;
+        animation-name: none;
+        //Firefox 1+
+        -webkit-animation-name: none;
+        //Safari 3-4
+        -moz-animation-name: none;
+      }
+
+    }
+  }
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
+  padding-left: 10px;
 }

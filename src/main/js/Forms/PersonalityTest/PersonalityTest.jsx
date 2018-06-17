@@ -31,7 +31,7 @@ class PersonalityTest extends Component {
             /**
              * Controls the expand and collapse
              */
-            isQuestionPanelExpanded: true,
+            isQuestionPanelExpanded: false,
             /**
              * [
              * 0:{hard_fact: Array(5)}
@@ -51,17 +51,23 @@ class PersonalityTest extends Component {
     /**
      * Handler call when user click on Category type to collapse and expand.
      *
-     * @param categoryName
-     * @param categoryTypeQuestionsList
+     * @param categoryId
      */
-    onClickOfCategoryType = (categoryName, categoryTypeQuestionsList) => {
-        let categoryTypeQuestionListObject = this.state.categoryTypeQuestionList;
-        categoryTypeQuestionListObject[categoryName] = categoryTypeQuestionsList;
-
-        this.setState({
-            // categoryTypeQuestionList: {...this.state.categoryTypeQuestionList
-            // categoriesTypesArray: [...this.state.categoriesTypesArray, ]
-        });
+    onClickOfCategoryType = (event, categoryId) => {
+        if (this.state.categoriesTypesArray !== null && (this.state.categoriesTypesArray).length > 0) {
+            let objectIndex = (this.state.categoriesTypesArray).findIndex((obj => (obj.id === categoryId)));
+            if (objectIndex > -1) {
+                let existingValue = (this.state.categoriesTypesArray)[objectIndex].isQuestionPanelExpanded;
+                if (existingValue !== null) {
+                    let updatedObjectArray = (this.state.categoriesTypesArray)
+                        .map(element => (element.id === categoryId) ?
+                            {...element, isQuestionPanelExpanded: !existingValue} : element);
+                    this.setState({
+                        categoriesTypesArray: updatedObjectArray
+                    });
+                }
+            }
+        }
     };
 
     /**
@@ -102,12 +108,11 @@ class PersonalityTest extends Component {
                 selectedAnswersForCategoriesQuestion: [...this.state.selectedAnswersForCategoriesQuestion, newObject]
             });
         } else {
-            let existingObject = (this.state.selectedAnswersForCategoriesQuestion)[objectIndex];
-            existingObject
+            //let existingObject = (this.state.selectedAnswersForCategoriesQuestion)[objectIndex];
 
             let updatedObjectArray = (this.state.selectedAnswersForCategoriesQuestion)
                 .map(element => (element.userName === userName && element.questionId === questionId) ?
-                    {...element, selectedValue : selectedValue} : element);
+                    {...element, selectedValue: selectedValue} : element);
             this.setState({
                 selectedAnswersForCategoriesQuestion: updatedObjectArray
             });

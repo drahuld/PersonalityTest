@@ -15,7 +15,7 @@ const ShowQuestions = (props) => {
      * @param questionId
      */
     const handleOptionChange = (changeEvent, questionId) => {
-        changeEvent.preventDefault();
+        //changeEvent.preventDefault();
         props.handleOptionChangeCallBack(changeEvent.target.value, APPLICATION_CONSTANTS.APPLICATION_USER_NAME, questionId);
     };
 
