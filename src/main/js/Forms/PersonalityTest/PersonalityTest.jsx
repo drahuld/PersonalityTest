@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
 import RequestServiceApi from "../Utils/RequestServiceApi.jsx";
 import CategoryQuestions from "./CategoryQuestions.jsx";
+import "./PersonalityTest.scss";
 
 /**
  * Top level Parent Component for Personality Test.
@@ -56,7 +57,7 @@ export default class PersonalityTest extends Component {
     render() {
         return (
             <div>
-                <CategoryQuestions />
+                <CategoryQuestions categoryList={this.state.categoriesTypesArray} />
             </div>
         );
     }

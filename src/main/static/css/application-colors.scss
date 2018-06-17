@@ -7,3 +7,11 @@ $black-color: rgba(0, 0, 0, 1);
 $app-header-bg-color: rgba(52,184,118, 1);
 $app-footer-bg-color: rgba(52,184,118, 1);
 $app-navSideBar-bg-color: #7f7f7f;
+$app-categoryType-expand-collapse: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33B0AB), to(#33B0AB), color-stop(.2,#268581));
+$app-categoryType-expand-collapse-hover: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#33B0AB), to(#33B0AB), color-stop(.5,#268581));
+
+// Category colors
+$category-summary-moz-box-shadow: 0 0 25px 10px rgba(44, 147, 142, 0.1);
+$category-summary-webkit-box-shadow: 0 0 25px 10px rgba(44, 147, 142, 0.1);
+$category-summary-box-shadow: 0 0 25px 10px rgba(44, 147, 142, 0.1);
+$category-summary-border: rgb(44, 147, 142);
