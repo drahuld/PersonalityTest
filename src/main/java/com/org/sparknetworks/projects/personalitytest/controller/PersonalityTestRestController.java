@@ -1,13 +1,15 @@
 package com.org.sparknetworks.projects.personalitytest.controller;
 
 import com.org.sparknetworks.projects.personalitytest.documents.Category;
+import com.org.sparknetworks.projects.personalitytest.documents.UserAnswerContainer;
+import com.org.sparknetworks.projects.personalitytest.documents.UserAnswers;
 import com.org.sparknetworks.projects.personalitytest.repositories.CategoryRepository;
 import com.org.sparknetworks.projects.personalitytest.repositories.QuestionsRepository;
+import com.org.sparknetworks.projects.personalitytest.repositories.UserAnswersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -29,6 +31,9 @@ public class PersonalityTestRestController {
     @Autowired
     private QuestionsRepository questionsRepository;
 
+    @Autowired
+    private UserAnswersRepository userAnswersRepository;
+
     @GetMapping("/categories/questions")
     public List<Category> getAllCategoriesWithQuestions() {
         List<Category> categoryList = categoryRepository.findAll();
@@ -36,5 +41,20 @@ public class PersonalityTestRestController {
             category.setListOfQuestions(questionsRepository.findQuestionsByCategory(category.getCategoryName()));
         });
         return categoryList;
+    }
+
+    @PostMapping("/categories/questions")
+    public @ResponseBody
+    boolean saveUserAnswers(@RequestBody UserAnswerContainer userAnswerContainer) {
+        if(userAnswerContainer != null && userAnswerContainer.getUserAnswersArray() != null){
+
+            List<UserAnswers> userAnswersList = Arrays.asList(userAnswerContainer.getUserAnswersArray());
+            List<UserAnswers> resultList = userAnswersRepository.saveAll(userAnswersList);
+
+            if(userAnswerContainer.getUserAnswersArray().length == resultList.size()){
+                return true;
+            }
+        }
+        return false;
     }
 }

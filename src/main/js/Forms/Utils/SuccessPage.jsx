@@ -13,7 +13,7 @@ const Success = () => {
     return(
         <div>
 
-            <h1 style={{color: 'Green'}}>Thank you ! Your answers are successfully saved !!! </h1>
+            <h1 style={{color: 'Green'}}>Thank you ! Your answers are successfully Submitted !!! </h1>
 
         </div>
     );
