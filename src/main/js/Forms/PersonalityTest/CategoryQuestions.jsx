@@ -67,6 +67,7 @@ const CategoryQuestions = (props) => {
                 })
             );
         }
+        return null;
     };
 
     return (<div className="mainBodyCss">
