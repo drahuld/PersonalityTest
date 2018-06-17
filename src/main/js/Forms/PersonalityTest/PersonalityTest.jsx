@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
+import RequestServiceApi from "../Utils/RequestServiceApi.jsx";
 
 export default class PersonalityTest extends Component {
 
@@ -9,6 +11,7 @@ export default class PersonalityTest extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isQuestionPanelExpanded: false,
             categoriesTypesArray: []
         }
     }
@@ -20,8 +23,18 @@ export default class PersonalityTest extends Component {
      */
     componentDidMount(){
         console.log("PersonalityTest: componentDidMount START ");
-
-
+        let response = RequestServiceApi.getRequest(APPLICATION_CONSTANTS.PERSONALITY_TEST_GET_ALL_CATEGORY_LIST_API);
+        response.then(data => {
+            if (data !== undefined && data !== null && Object.keys(data).length > 0) {
+                let categoryArray = [];
+                Object.entries(data).map(([key, value]) => {
+                    categoryArray[key] = {...value, isQuestionPanelExpanded: this.state.isQuestionPanelExpanded};
+                });
+                this.setState({
+                    categoriesTypesArray: categoryArray
+                });
+            }
+        });
         console.log("PersonalityTest: componentDidMount END ");
     }
 

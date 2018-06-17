@@ -53,4 +53,4 @@ class RequestServiceApi {
     }
 }
 
-export default new RequestService();
+export default new RequestServiceApi();
