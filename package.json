@@ -4,7 +4,11 @@
   "description": "Personality Test Web Application developed for Spark Networks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "startProd": "npm run prod",
+    "dev": "webpack-dev-server --mode development --hot --config config/webpack.dev.config.js --history-api-fallback",
+    "prod": "webpack --mode production -p --config config/webpack.prod.config.js --display-error-details"
   },
   "repository": {
     "type": "git",
