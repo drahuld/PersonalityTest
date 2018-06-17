@@ -1,5 +1,7 @@
 import React from "react";
 import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
+import CategoryQuestions from "./CategoryQuestions";
+import PropTypes from "prop-types";
 /**
  * Component to show Questions and Radio button options.
  *
@@ -78,6 +80,14 @@ const ShowQuestions = (props) => {
             );
         })
     );
+};
+
+
+ShowQuestions.propTypes = {
+    selectedAnswersList: PropTypes.array.isRequired,
+    categoryTypeQuestionList: PropTypes.array.isRequired,
+    categoryTypeKey: PropTypes.string.isRequired,
+    handleOptionChangeCallBack: PropTypes.func.isRequired,
 };
 
 export default ShowQuestions;

@@ -2,6 +2,7 @@ import React from "react";
 import "./PersonalityTest.scss"
 import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
 import ShowQuestions from "./ShowQuestions.jsx";
+import PropTypes from 'prop-types';
 
 /**
  * Component is a child component of Personality Test Component.
@@ -78,4 +79,10 @@ const CategoryQuestions = (props) => {
 
 };
 
+CategoryQuestions.propTypes = {
+    categoryList: PropTypes.array.isRequired,
+    selectedAnswersList: PropTypes.array.isRequired,
+    onClickOfCategoryTypeCallBack: PropTypes.func.isRequired,
+    handleOptionChangeCallBack: PropTypes.func.isRequired,
+};
 export default CategoryQuestions;
