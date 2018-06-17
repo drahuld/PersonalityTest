@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import "./Home.scss";
 
-const Home = (props) => {
+const Home = () => {
     return (
-        <div>
+        <div className="homeMainDiv">
             Welcome to Personality Test !!!
         </div>
     );

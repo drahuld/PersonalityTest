@@ -1,8 +1,10 @@
+@import '../../../static/css/application-colors';
+
 .mainLayoutDivGrid {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   min-height: 100vh;
+  min-width: 362px;
 }
 
 @media (min-width: 750px) {
@@ -10,7 +12,7 @@
     display: grid;
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: auto 1fr auto;
-    border: 1px solid green;
+    min-width: 362px;
   }
 }
 
@@ -18,7 +20,7 @@ header {
   grid-column: span 3;
   text-align: left;
   font-size: 1.4em;
-  background-color: red;
+  background-color: $app-header-bg-color;
   color: white;
   padding: 30px;
 }
@@ -29,12 +31,12 @@ main {
 }
 
 nav {
-  background-color: green;
+  background-color: $app-navSideBar-bg-color;
   padding: 10px;
 }
 
 aside {
-  background-color: yellowgreen;
+  background-color: $white-color;
   padding: 20px;
 }
 
@@ -42,7 +44,7 @@ footer {
   grid-column: span 3;
   text-align: center;
   font-size: 1.4em;
-  background-color: maroon;
+  background-color: $app-footer-bg-color;
   color: white;
   padding: 30px;
 }

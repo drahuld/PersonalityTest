@@ -11,7 +11,7 @@ const MainAppLayout = (props) => {
           <main>
               {props.children}
           </main>
-          <aside>Aside</aside>
+          <aside></aside>
           <footer><FooterLayout /></footer>
       </div>
     );
