@@ -7,11 +7,24 @@ import PersonalityTest from "./Forms/PersonalityTest/PersonalityTest.jsx";
 import SuccessPage from "./Forms/Utils/SuccessPage.jsx";
 import ErrorPage from "./Forms/Utils/ErrorPage.jsx";
 
+/**
+ * Starting component of the application.
+ * It defines all the routes of the application.
+ */
 export default class App extends Component {
+
+    /**
+     * Constructor for App Component
+     * @param props
+     */
     constructor(props) {
         super(props);
     }
 
+    /**
+     * Render method for App Component.
+     * @returns {*}
+     */
     render() {
         return (<div className="mainAppDiv">
 

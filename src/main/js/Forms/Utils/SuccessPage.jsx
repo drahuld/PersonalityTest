@@ -1,5 +1,13 @@
 import React from 'react';
 
+/**
+ * Success Page Component to show Successful submission of data.
+ *
+ * This is stateless component.
+ *
+ * @returns {*}
+ * @constructor
+ */
 const Success = () => {
 
     return(

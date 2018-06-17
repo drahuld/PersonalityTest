@@ -2,6 +2,14 @@ import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import "./Navigation.scss";
 
+/**
+ * Left hand side navigational component for application.
+ *
+ * This is stateless component.
+ *
+ * @returns {*}
+ * @constructor
+ */
 const Navigation = () => {
 
     return (

@@ -1,5 +1,13 @@
 import React from 'react';
 
+/**
+ * Error Page Component to show Error page after in case of any error while submission.
+ *
+ * This is stateless component.
+ *
+ * @returns {*}
+ * @constructor
+ */
 const ErrorPage = () => {
 
     return(
