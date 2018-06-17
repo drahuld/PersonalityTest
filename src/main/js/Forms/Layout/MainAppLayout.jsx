@@ -1,13 +1,14 @@
 import React from 'react';
 import FooterLayout from "../Footer/FooterLayout.jsx";
 import HeaderLayout from "../Header/HeaderLayout.jsx";
+import Navigation from "../Nav/Navigation.jsx";
 import './MainAppLayout.scss';
 
 const MainAppLayout = (props) => {
     return (
       <div className="mainLayoutDivGrid">
           <header><HeaderLayout /></header>
-          <nav>Navigation</nav>
+          <nav><Navigation /></nav>
           <main>
               {props.children}
           </main>
