@@ -1,6 +1,9 @@
 package com.org.sparknetworks.projects.personalitytest.controller;
 
 import com.org.sparknetworks.projects.personalitytest.documents.Category;
+import com.org.sparknetworks.projects.personalitytest.repositories.CategoryRepository;
+import com.org.sparknetworks.projects.personalitytest.repositories.QuestionsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +23,18 @@ import java.util.List;
 @RequestMapping("/rest/")
 public class PersonalityTestRestController {
 
-    @GetMapping("/categories/questions")
-    public List<Category> getAllCategoriesWithQuestions(){
+    @Autowired
+    private CategoryRepository categoryRepository;
 
-        return null;
+    @Autowired
+    private QuestionsRepository questionsRepository;
+
+    @GetMapping("/categories/questions")
+    public List<Category> getAllCategoriesWithQuestions() {
+        List<Category> categoryList = categoryRepository.findAll();
+        categoryList.forEach(category -> {
+            category.setListOfQuestions(questionsRepository.findQuestionsByCategory(category.getCategoryName()));
+        });
+        return categoryList;
     }
 }

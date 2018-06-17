@@ -29,7 +29,7 @@ public class Category {
     /**
      * This holds all the questions related to particular category.
      */
-    private List<Question> listOfQuestions;
+    private List<Questions> listOfQuestions;
 
     /**
      * Constructor for Category Document.
@@ -58,11 +58,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public List<Question> getListOfQuestions() {
+    public List<Questions> getListOfQuestions() {
         return listOfQuestions;
     }
 
-    public void setListOfQuestions(List<Question> listOfQuestions) {
+    public void setListOfQuestions(List<Questions> listOfQuestions) {
         this.listOfQuestions = listOfQuestions;
     }
 }
