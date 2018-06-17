@@ -1,7 +1,18 @@
 import React, {Component} from "react";
 import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
 import RequestServiceApi from "../Utils/RequestServiceApi.jsx";
+import CategoryQuestions from "./CategoryQuestions.jsx";
 
+/**
+ * Top level Parent Component for Personality Test.
+ *
+ * This is stateful component and responsible for handling state of this functionality.
+ * It also handle state of its child component and update its state by using call back methods and
+ * pass it down through props.
+ *
+ * @returns {*}
+ * @constructor
+ */
 export default class PersonalityTest extends Component {
 
     /**
@@ -45,7 +56,7 @@ export default class PersonalityTest extends Component {
     render() {
         return (
             <div>
-                personality test
+                <CategoryQuestions />
             </div>
         );
     }
