@@ -5,7 +5,7 @@ import MainAppLayout from "./Forms/Layout/MainAppLayout.jsx";
 import "./App.scss";
 import PersonalityTest from "./Forms/PersonalityTest/PersonalityTest.jsx";
 import SuccessPage from "./Forms/Utils/SuccessPage.jsx";
-import ErrorPage from "./Forms/Utils/ErrorPage";
+import ErrorPage from "./Forms/Utils/ErrorPage.jsx";
 
 export default class App extends Component {
     constructor(props) {
@@ -25,4 +25,4 @@ export default class App extends Component {
 
         </div>);
     }
-}
+};

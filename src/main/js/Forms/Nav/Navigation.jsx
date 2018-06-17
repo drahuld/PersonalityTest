@@ -4,13 +4,11 @@ import "./Navigation.scss";
 
 const Navigation = () => {
 
-    return(
+    return (
         <div className="navMainDiv">
             <ul>
-                <li>
-                    <li><Link to="/home">Home</Link></li>
-                    <li><Link to="/home/personalityTest">Personality Test</Link></li>
-                </li>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/home/personalityTest">Personality Test</Link></li>
             </ul>
         </div>
     );

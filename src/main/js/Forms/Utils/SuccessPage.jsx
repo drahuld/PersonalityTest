@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Success = (props) => {
+const Success = () => {
 
     return(
         <div>
