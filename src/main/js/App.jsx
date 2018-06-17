@@ -9,6 +9,7 @@ export default class App extends Component {
     render() {
         return (<div className="mainAppDiv">
 
+                This is App React Component.
 
         </div>);
     }
