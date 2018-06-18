@@ -1,6 +1,14 @@
 # PersonalityTest
 Repository for Personality Test
 
+Functionality:
+
+1. Application fetch all category types and its questions from MongoDB. 
+2. It will display all the questions separated by Category types. 
+3. Category type is a collapsable/expandable component which contains their respective questions. 
+4. User can select the answers to the question and submit the selected answer.  
+5. Answer gets store to MongoDb <b>"userAnswers" collection</b> which contains userName, questionId, and selected answer by user. 
+
 To run the application following Mongo DB Setup is required. 
 
 Following script creates a new database "SparkNetworkMongoDB"
