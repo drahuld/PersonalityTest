@@ -32,6 +32,13 @@ public class Category {
     private List<Questions> listOfQuestions;
 
     /**
+     * Default Constructor
+     */
+    public Category() {
+
+    }
+
+    /**
      * Constructor for Category Document.
      *
      * @param id

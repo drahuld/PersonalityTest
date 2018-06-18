@@ -1,6 +1,5 @@
 import React from "react";
 import * as APPLICATION_CONSTANTS from "../../Constants/ApplicationConstants.jsx";
-import CategoryQuestions from "./CategoryQuestions";
 import PropTypes from "prop-types";
 /**
  * Component to show Questions and Radio button options.
