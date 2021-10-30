@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "startProd": "npm run prod",
     "dev": "webpack-dev-server --mode development --hot --config config/webpack.dev.config.js --history-api-fallback",
-    "prod": "webpack --mode production -p --config config/webpack.prod.config.js --display-error-details"
+    "prod": "webpack --mode production --config config/webpack.prod.config.js"
   },
   "repository": {
     "type": "git",

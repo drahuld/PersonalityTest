@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var extractPlugin = new ExtractTextPlugin({filename: 'main.css'});
 var APP_DIR = path.resolve(__dirname, "../src/main/js", "index.jsx");
 var BUILD_DIR = path.resolve(__dirname, '../target/classes/public');
 const config = {
@@ -31,12 +30,13 @@ const config = {
         ]
     },
     plugins: [
-        extractPlugin,
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, '../src/main/static/')
-            }
-        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '../src/main/static/')
+                }
+            ]
+        }),
         new webpack.DefinePlugin({
                 'process.env': {
                     NODE_ENV: JSON.stringify('production'),

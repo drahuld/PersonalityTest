@@ -73,8 +73,8 @@
                 <configuration>
                     <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
                     <npmDownloadRoot>https://registry.npmjs.org/npm/-/</npmDownloadRoot>
-                    <nodeVersion>v7.2.0</nodeVersion>
-                    <npmVersion>5.5.1</npmVersion>
+                    <nodeVersion>v14.17.0</nodeVersion>
+                    <npmVersion>7.19.1</npmVersion>
                     <installDirectory>config/lib/</installDirectory>
                 </configuration>
                 <executions>
