@@ -1,14 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var extractPlugin = new ExtractTextPlugin({filename: 'main.css'});
-var STATIC_PATH = path.resolve(__dirname, '../src/main/static/');
-var APP_DIR = path.resolve(__dirname, '../src/main/js');
+var APP_DIR = path.resolve(__dirname, "../src/main/js", "index.jsx");
 var BUILD_DIR = path.resolve(__dirname, 'public');
 const config = {
-    entry: APP_DIR + "/index.jsx",
+    entry: {index: APP_DIR},
     output: {
         path: BUILD_DIR,
         filename: "bundle.js",
@@ -19,42 +15,29 @@ const config = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-            },
-            {
+                use: ['babel-loader'],
+            }, {
                 test: /\.scss$/,
-                use: extractPlugin.extract({
-                    use: ['css-loader', 'sass-loader']
-                })
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" },
+                    { loader: "sass-loader" }
+                ]
             }, {
                 test: /\.(woff|woff2|eot|ttf)$/,
-                loader: 'file-loader?name=[name]-[ext].[hash]'
-            }, {
-                test: /\.html$/,
-                use: ['html-loader']
-            }, {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    publicPath: STATIC_PATH + '/images/'
-                }
+                use: 'file-loader?name=[name]-[ext].[hash]'
             }
         ]
     },
     plugins: [
-        extractPlugin,
-        new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, '../src/main/static/')
-            }
-        ])
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '../src/main/static/')
+                }
+            ]
+        })
     ],
-
 };
 module.exports = config;
 
