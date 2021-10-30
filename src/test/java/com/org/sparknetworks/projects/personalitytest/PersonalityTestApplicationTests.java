@@ -9,4 +9,9 @@ public class PersonalityTestApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void testMethod(){
+
+	}
+
 }
